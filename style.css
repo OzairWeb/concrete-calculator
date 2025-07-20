@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Slab:wght@500&display=swap');
+
+#wp-concrete-calculator * {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+#wp-concrete-calculator {
+  background: #eef2f7;
+  padding: 30px;
+}
+
+.calculator-container {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.calculator-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.calculator-header h2 {
+  margin: 0;
+  font-size: 28px;
+  font-family: 'Roboto Slab', serif;
+  color: #222;
+}
+
+/* Input Group */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 15px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Radio Buttons */
+.radio-group {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: #444;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+}
+
+/* Flex Group for Length/Width/Height */
+.flex-group {
+  display: flex;
+  gap: 15px;
+}
+
+.flex-group > div {
+  flex: 1;
+}
+
+/* Button */
+.btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #0056b3, #004494);
+}
+
+/* Results Section */
+.results-container {
+  margin-top: 30px;
+  background: #e8f5e9;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 6px solid #43a047;
+  font-size: 15px;
+}
+
+.results-container h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #2e7d32;
+  font-family: 'Roboto Slab', serif;
+}
+
+#dryVolume {
+  font-size: 17px;
+  color: #111;
+  margin-top: 5px;
+}
+
+/* Table Styling */
+.table-results {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table-results th,
+.table-results td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.table-results th {
+  background-color: #43a047;
+  color: #fff;
+  font-weight: 600;
+}
+
+.table-results td {
+  color: #333;
+}
+
+/* Chart Styling */
+.chart-container {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.chart-container canvas {
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}

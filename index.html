@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cement Concrete Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="wp-concrete-calculator">
+    <div class="calculator-container">
+      <div class="calculator-header">
+        <h2>Cement Concrete Calculator</h2>
+      </div>
+
+      <!-- Concrete Grade -->
+      <div class="input-group">
+        <label for="concreteGrade">Select Concrete Grade (Mix Ratio):</label>
+        <select id="concreteGrade">
+          <option value="M5">M5 (1:5:10)</option>
+          <option value="M7.5">M7.5 (1:4:8)</option>
+          <option value="M10">M10 (1:3:6)</option>
+          <option value="M15">M15 (1:2:4)</option>
+          <option value="M20">M20 (1:1.5:3)</option>
+          <option value="M25">M25 (1:1:2)</option>
+        </select>
+      </div>
+
+      <!-- Input Method -->
+      <div class="input-group">
+        <label>Select Input Method:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="inputType" id="inputVolume" onclick="toggleInput('volume')" checked> Volume</label>
+          <label><input type="radio" name="inputType" id="inputDimensions" onclick="toggleInput('dimensions')"> Dimensions (Length, Width, Height)</label>
+        </div>
+      </div>
+
+      <!-- Volume Input -->
+      <div id="volumeSection" class="input-group">
+        <label for="concreteVolume">Enter Volume:</label>
+        <div class="flex-group">
+          <input type="number" id="concreteVolume" placeholder="Enter volume" />
+          <select id="volumeUnit">
+            <option value="cubic_meters">Cubic Meters</option>
+            <option value="cubic_feet">Cubic Feet</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Dimensions Input -->
+      <div id="dimensionsSection" class="input-group" style="display: none;">
+        <div class="flex-group">
+          <div>
+            <label for="length">Length:</label>
+            <input type="number" id="length" placeholder="Enter length" />
+          </div>
+          <div>
+            <label for="width">Width:</label>
+            <input type="number" id="width" placeholder="Enter width" />
+          </div>
+          <div>
+            <label for="depth">Depth:</label>
+            <input type="number" id="depth" placeholder="Enter depth" />
+          </div>
+        </div>
+        <div style="margin-top: 10px;">
+          <select id="dimensionsUnit">
+            <option value="meters">Meters</option>
+            <option value="feet">Feet</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Calculate Button -->
+      <button onclick="calculateMaterials()" class="btn">Calculate</button>
+
+      <!-- Results Section -->
+      <div id="resultSection" class="results-container" style="display: none;">
+        <h3>Total Dry Quantity:</h3>
+        <p id="dryVolume" style="font-weight: bold;"></p>
+        <table class="table-results">
+          <thead>
+            <tr><th>Sr.</th><th>Material</th><th>Quantity</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Cement</td><td id="cementResult" style="font-weight: bold;"></td></tr>
+            <tr><td>2</td><td>Sand</td><td id="sandResult" style="font-weight: bold;"></td></tr>
+            <tr><td>3</td><td>Aggregate</td><td id="aggregateResult" style="font-weight: bold;"></td></tr>
+          </tbody>
+        </table>
+        <div class="chart-container">
+          <canvas id="myPieChart" width="450" height="450"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
