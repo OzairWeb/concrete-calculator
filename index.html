@@ -3,13 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Browser-based material estimates by Ozairwebs, with metric and imperial inputs and documented assumptions." />
-  <title>Cement Concrete Calculator</title>
+  <meta name="description" content="Estimate cement, sand and aggregate from concrete volume or dimensions. Metric and imperial inputs, nominal mix ratios, worked example and clear assumptions." />
+  <title>Concrete Calculator – Cement, Sand & Aggregate</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="canonical" href="https://ozairweb.github.io/concrete-calculator/" />
+<meta name="robots" content="index,follow" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Concrete Calculator – Cement, Sand & Aggregate" />
+<meta property="og:description" content="Estimate cement, sand and aggregate from concrete volume or dimensions. Metric and imperial inputs, nominal mix ratios, worked example and clear assumptions." />
+<meta property="og:url" content="https://ozairweb.github.io/concrete-calculator/" />
+<meta property="og:image" content="https://ozairweb.github.io/concrete-calculator/assets/calculator-example.png" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Concrete Calculator \u2013 Cement, Sand & Aggregate", "url": "https://ozairweb.github.io/concrete-calculator/", "description": "Estimate cement, sand and aggregate from concrete volume or dimensions. Metric and imperial inputs, nominal mix ratios, worked example and clear assumptions.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any modern web browser", "author": {"@type": "Organization", "name": "Ozairwebs", "url": "https://ozairwebs.com/"}}</script>
 </head>
 <body>
-<header class="project-intro"><p><a href="https://ozairwebs.com/">Ozairwebs</a> / Public development tools</p><h1>Concrete material estimator</h1><p>Enter your dimensions to make a preliminary estimate. Review the assumptions below before using the result.</p></header>
+<header class="project-intro"><p><a href="https://ozairwebs.com/">Ozairwebs</a> / Public development tools</p><h1>Concrete Calculator – Cement, Sand & Aggregate</h1><p>Enter your dimensions to make a preliminary estimate. Review the assumptions below before using the result.</p></header>
   <div id="wp-concrete-calculator">
     <div class="calculator-container">
       <div class="calculator-header">
@@ -98,6 +106,7 @@
     </div>
   </div>
   <section class="project-notes"><h2>How to interpret this estimate</h2><p>Dry-volume factor: 1.54. Cement bag estimate uses 1.226 ft³ per bag. Ratios are nominal estimating presets; a grade label does not certify concrete strength.</p><p>This tool supports preliminary quantity planning. Mix design, structural suitability, site waste, joint dimensions and actual purchasing quantities need project-specific confirmation. Labour, delivery, taxes and other materials are not included.</p><p><a href="README.md">Calculation details and examples</a> · <a href="https://ozairwebs.com/company/contact/">Discuss a custom calculator</a></p></section>
+<section class="project-notes"><h2>How to use the concrete calculator</h2><ol><li>Choose a nominal ratio preset.</li><li>Enter wet concrete volume in cubic metres or cubic feet, or select dimensions and enter length, width and depth in one unit.</li><li>Select Calculate to see dry volume and the cement, sand and aggregate split.</li><li>Review the fixed factors and project requirements before turning an estimate into an order.</li></ol><h2>Concrete calculator features</h2><ul><li>Six nominal mix presets from 1:5:10 to 1:1:2.</li><li>Direct volume and rectangular dimension input modes.</li><li>Metric and imperial unit conversion.</li><li>Dry volume, cement bag approximation, sand and aggregate volumes.</li><li>Ratio chart with numerical results available without the chart library.</li><li>Positive-input validation, keyboard focus indicators and mobile layout.</li></ul><h2>Worked concrete estimate: 1 cubic metre</h2><p>Select the 1:2:4 preset and enter 1 m³. The 1.54 dry factor gives 1.54 m³ of dry materials: 0.22 m³ cement, 0.44 m³ sand and 0.88 m³ aggregate. The built-in bag-volume approximation gives about 6.34 cement bags. It does not add a waste allowance.</p><h2>Concrete calculation questions</h2><h3>Does the selected grade guarantee concrete strength?</h3><p>No. The historical grade labels identify ratio presets in this estimator. Concrete strength depends on an approved mix design, materials, water content, production and curing, which this tool does not evaluate.</p><h3>What does the dry-volume factor mean?</h3><p>The calculator multiplies wet volume by 1.54 as a fixed estimating allowance. It is an assumption of this tool, not a measurement of your actual materials. Confirm the appropriate approach for the project.</p><h3>Can I change bag weight or cement density?</h3><p>This version uses a fixed 1.226 ft³ bag-volume approximation. It has no bag-weight or density input. Do not interpret it as a configurable weight-based ordering model.</p><h3>Does it include waste or costs?</h3><p>No. Output covers nominal material quantities only. Waste, delivery, labour, taxes and prices are separate. Retain the unrounded estimate and decide purchase rounding with the supplier.</p><h2>Example screenshot</h2><p>The image shows a real browser calculation using the example above.</p><img src="assets/calculator-example.png" alt="Concrete calculator showing 1 m³ with a 1:2:4 ratio and 6.34 cement bags" width="1000" loading="lazy" /><p><a href="https://github.com/OzairWeb/concrete-calculator">Source code and documentation</a> · <a href="https://ozairweb.github.io/brick-wall-calculator/">Brick wall calculator</a></p></section>
   <script src="script.js"></script>
 </body>
 </html>

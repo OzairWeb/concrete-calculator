@@ -1,6 +1,16 @@
-# Concrete material calculator
+# Concrete Calculator – Cement, Sand & Aggregate
 
 A small HTML, CSS and JavaScript tool from [Ozairwebs](https://ozairwebs.com/) for preliminary cement, sand and aggregate estimates. Enter a known wet concrete volume, or calculate it from length, width and depth. Metric and imperial inputs use the same underlying volume calculation.
+
+**[Open the calculator](https://ozairweb.github.io/concrete-calculator/)** · [Source files](index.html)
+
+## Features
+
+Volume or dimensions; cubic metres or cubic feet; six nominal ratios; dry-material split; cement bags; optional ratio chart; input validation; responsive layout.
+
+## Example screenshot
+
+![Actual worked example](assets/calculator-example.png)
 
 ## Run it
 
