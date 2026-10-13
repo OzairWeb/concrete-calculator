@@ -23,8 +23,9 @@
       }
     }
 
-    if (isNaN(volume) || volume <= 0) {
-      alert('Please enter a valid volume or dimensions');
+    if (!Number.isFinite(volume) || volume <= 0 || (!inputVolumeChecked && [length, width, depth].some(function (n) { return !Number.isFinite(n) || n <= 0; }))) {
+      document.getElementById('resultSection').style.display = 'none';
+      alert('Please enter finite, positive values for every required dimension or volume.');
       return;
     }
 
@@ -76,6 +77,7 @@
   };
 
   function updatePieChart(data) {
+    if (typeof Chart === 'undefined') return;
     var ctx = document.getElementById('myPieChart').getContext('2d');
     if (pieChart) pieChart.destroy();
     pieChart = new Chart(ctx, {
@@ -88,9 +90,10 @@
         }]
       },
       options: {
-        responsive: false,
+        responsive: true,
         maintainAspectRatio: false
       }
     });
   }
 })();
+
