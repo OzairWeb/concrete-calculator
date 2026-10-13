@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Browser-based material estimates by Ozairwebs, with metric and imperial inputs and documented assumptions." />
   <title>Cement Concrete Calculator</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+<header class="project-intro"><p><a href="https://ozairwebs.com/">Ozairwebs</a> / Public development tools</p><h1>Concrete material estimator</h1><p>Enter your dimensions to make a preliminary estimate. Review the assumptions below before using the result.</p></header>
   <div id="wp-concrete-calculator">
     <div class="calculator-container">
       <div class="calculator-header">
@@ -16,7 +18,7 @@
 
       <!-- Concrete Grade -->
       <div class="input-group">
-        <label for="concreteGrade">Select Concrete Grade (Mix Ratio):</label>
+        <label for="concreteGrade">Select Nominal Mix Preset (Ratio):</label>
         <select id="concreteGrade">
           <option value="M5">M5 (1:5:10)</option>
           <option value="M7.5">M7.5 (1:4:8)</option>
@@ -40,8 +42,8 @@
       <div id="volumeSection" class="input-group">
         <label for="concreteVolume">Enter Volume:</label>
         <div class="flex-group">
-          <input type="number" id="concreteVolume" placeholder="Enter volume" />
-          <select id="volumeUnit">
+          <input type="number" step="any" min="0" id="concreteVolume" placeholder="Enter volume" />
+          <select aria-label="Volume unit" id="volumeUnit">
             <option value="cubic_meters">Cubic Meters</option>
             <option value="cubic_feet">Cubic Feet</option>
           </select>
@@ -53,19 +55,19 @@
         <div class="flex-group">
           <div>
             <label for="length">Length:</label>
-            <input type="number" id="length" placeholder="Enter length" />
+            <input type="number" step="any" min="0" id="length" placeholder="Enter length" />
           </div>
           <div>
             <label for="width">Width:</label>
-            <input type="number" id="width" placeholder="Enter width" />
+            <input type="number" step="any" min="0" id="width" placeholder="Enter width" />
           </div>
           <div>
             <label for="depth">Depth:</label>
-            <input type="number" id="depth" placeholder="Enter depth" />
+            <input type="number" step="any" min="0" id="depth" placeholder="Enter depth" />
           </div>
         </div>
         <div style="margin-top: 10px;">
-          <select id="dimensionsUnit">
+          <select aria-label="Dimension unit" id="dimensionsUnit">
             <option value="meters">Meters</option>
             <option value="feet">Feet</option>
           </select>
@@ -76,7 +78,7 @@
       <button onclick="calculateMaterials()" class="btn">Calculate</button>
 
       <!-- Results Section -->
-      <div id="resultSection" class="results-container" style="display: none;">
+      <div id="resultSection" class="results-container" aria-live="polite" style="display: none;">
         <h3>Total Dry Quantity:</h3>
         <p id="dryVolume" style="font-weight: bold;"></p>
         <table class="table-results">
@@ -90,11 +92,13 @@
           </tbody>
         </table>
         <div class="chart-container">
-          <canvas id="myPieChart" width="450" height="450"></canvas>
+          <canvas role="img" aria-label="Material share by nominal mix ratio" id="myPieChart" width="450" height="450"></canvas>
         </div>
       </div>
     </div>
   </div>
+  <section class="project-notes"><h2>How to interpret this estimate</h2><p>Dry-volume factor: 1.54. Cement bag estimate uses 1.226 ft³ per bag. Ratios are nominal estimating presets; a grade label does not certify concrete strength.</p><p>This tool supports preliminary quantity planning. Mix design, structural suitability, site waste, joint dimensions and actual purchasing quantities need project-specific confirmation. Labour, delivery, taxes and other materials are not included.</p><p><a href="README.md">Calculation details and examples</a> · <a href="https://ozairwebs.com/company/contact/">Discuss a custom calculator</a></p></section>
   <script src="script.js"></script>
 </body>
 </html>
+
