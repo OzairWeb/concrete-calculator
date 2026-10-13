@@ -170,3 +170,20 @@
   max-width: 100%;
   height: auto;
 }
+
+
+/* Layout and keyboard accessibility */
+*, *::before, *::after { box-sizing: border-box; }
+.project-intro, .project-notes { max-width: 980px; margin: 24px auto; padding: 16px; font-family: Arial, sans-serif; line-height: 1.6; }
+img { max-width: 100%; }
+button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid #1662aa; outline-offset: 3px; }
+.flex-group > * { min-width: 0; }
+.toggle-group button { color: #222; }
+@media (max-width: 600px) {
+  body { padding: 8px; }
+  #wp-concrete-calculator { padding: 8px; }
+  .calculator-container { padding: 20px 12px; }
+  .flex-group, .radio-group { flex-direction: column; align-items: stretch; }
+  .table-results th, .table-results td { padding: 8px 4px; overflow-wrap: anywhere; }
+  .results-container { padding: 12px; }
+}
